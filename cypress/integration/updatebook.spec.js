@@ -2,7 +2,7 @@ describe('When the user wants to update a book', () =>{
     let bookname = "";
     let author = "";
     before(()=>{
-        cy.visit("https://frontbooksmilo.herokuapp.com/");
+        cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
         
 
         cy.get('.ant-table-tbody > :nth-child(1) > :nth-child(2)')
@@ -19,7 +19,7 @@ describe('When the user wants to update a book', () =>{
         cy.get('#name').click().type(" nuevo nombre");
         cy.get('#author').click().type(" nuevo author");
         cy.get('.ant-modal-footer > .ant-btn-primary').click();
-        cy.visit("https://frontbooksmilo.herokuapp.com/");
+        cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
     })
     it("Then the book should be updated in the list", ()=>{
         cy.contains(bookname).should("exist");
@@ -30,7 +30,7 @@ describe('When the user wants to update a book', () =>{
         cy.get('#name').click().clear().click().type(bookname);
         cy.get('#author').click().clear().click().type(author);
         cy.get('.ant-modal-footer > .ant-btn-primary').click();
-        cy.visit("https://frontbooksmilo.herokuapp.com/");
+        cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
     })
 })
 

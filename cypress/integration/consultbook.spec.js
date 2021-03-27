@@ -1,7 +1,7 @@
 describe("When the user want to see a book that exists in the list",()=>{
     let bookname = ""
     before(()=>{
-        cy.visit("https://frontbooksmilo.herokuapp.com/");
+        cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
         cy.get('.ant-select-arrow > .anticon > svg').click();
         cy.get('[title="50 / page"] > .ant-select-item-option-content').click();
         cy.get('.ant-table-tbody > :nth-child(1) > :nth-child(2)')
@@ -18,7 +18,7 @@ describe("When the user want to see a book that exists in the list",()=>{
 
 describe("When the user want to see a book that doesn't exist in the list",()=>{
     before(()=>{
-        cy.visit("https://frontbooksmilo.herokuapp.com/");
+        cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
         cy.get('.ant-select-arrow > .anticon > svg').click();
         cy.get('[title="50 / page"] > .ant-select-item-option-content').click();
     })
