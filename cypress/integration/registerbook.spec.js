@@ -4,11 +4,11 @@ describe('When the user wants to register a book', () =>{
     before(()=>{
         cy.visit("https://milosen-booksfront.herokuapp.com").wait(4);
 
-        cy.get('.ant-btn-primary > .ng-star-inserted').click();
+        cy.get('.ant-btn-primary > .ng-star-inserted').click().wait(4);
 
-        cy.get('#name').click().type(bookName);
+        cy.get('#name').click().type(bookName).wait(2);
 
-        cy.get('#author').click().type(authorname);        
+        cy.get('#author').click().type(authorname).wait(2);        
 
         cy.get('.ant-modal-footer > .ant-btn-primary > .ng-star-inserted').click();
 
